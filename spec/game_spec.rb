@@ -19,5 +19,14 @@ describe 'Game' do
 
       expect(result).to eq("\u{1F7E6}\u{1F7E6}\u{1F7E6}\u{1F7E6}\u{1F7E8}")
     end
+
+    it 'should handle a correctly positioned letter well' do
+      game = Game.new('DRINK')
+      guess_word = 'ALIVE'
+
+      result = game.match_word(guess_word)
+
+      expect(result).to eq("\u{1F7E6}\u{1F7E6}\u{1F7E9}\u{1F7E6}\u{1F7E6}")
+    end
   end
 end
